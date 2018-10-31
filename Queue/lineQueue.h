@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 #include "Node.h"
 #include <iostream>
@@ -14,8 +13,8 @@ public:
 	void traverse();
 
 private:
-	Node<T> *head;
-	Node<T> *tail;
+	//Node<T> *head;
+	//Node<T> *tail;
 	Node<T> *queue;
 	int m_Length;
 };
@@ -28,7 +27,7 @@ inline lineQueue<T>::lineQueue()
 	m_Length = 0;
 	//head = queue;
 	//tail = queue;
-	
+
 }
 
 template<class T>
@@ -42,9 +41,9 @@ template<class T>
 inline void lineQueue<T>::enQueue(Node<T> *num)
 {
 	Node<T> *p = queue;
-	while (p->next!=nullptr)
+	while (p->next != nullptr)
 	{
-		p=p->next;
+		p = p->next;
 	}
 	p->next = num;
 	m_Length++;
